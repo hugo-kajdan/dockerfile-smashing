@@ -1,7 +1,7 @@
 FROM ruby:2.7.2
 
 RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
-RUN apt-get update && apt-get install apt-utils
+RUN apt-get update
 RUN apt-get update && \
     apt-get -y install nodejs --force-yes && \
     apt-get -y clean --force-yes
